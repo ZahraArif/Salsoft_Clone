@@ -1,0 +1,2883 @@
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+  body {
+      margin: 0%;
+      padding: 0%;
+      box-sizing: border-box;
+      cursor: pointer;
+  }
+
+
+  #loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #fff;
+      width: 100%;
+      height: 100vh;
+      z-index: 9999;
+      transition: all 0.2s ease-in-out;
+  }
+
+  #loading.deactivate {
+      opacity: 0;
+  }
+
+  #loading div {
+      width: 1rem;
+      height: 1rem;
+      margin: 2rem 0.3rem;
+      background: #000;
+      border-radius: 50%;
+      -webkit-animation: 0.9s bounce infinite alternate;
+      animation: 0.9s bounce infinite alternate;
+  }
+
+  #loading div:nth-child(2) {
+      -webkit-animation-delay: 0.3s;
+      animation-delay: 0.3s;
+  }
+
+  #loading div:nth-child(3) {
+      -webkit-animation-delay: 0.6s;
+      animation-delay: 0.6s;
+  }
+
+  @-webkit-keyframes bounce {
+      to {
+          opacity: 0.3;
+          transform: translate3d(0, -1rem, 0);
+      }
+  }
+
+  @keyframes bounce {
+      to {
+          opacity: 0.3;
+          transform: translate3d(0, -1rem, 0);
+      }
+  }
+
+
+
+
+
+
+  .menu-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      margin-top: 5%;
+  }
+
+  .toggler {
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      opacity: 0;
+      z-index: 3;
+      cursor: pointer;
+  }
+
+  .hamburger {
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+      transform: rotate(90deg);
+      border: 2px solid transparent;
+       background: transparent;
+  }
+
+  .hamburger>div {
+      position: absolute;
+      width: 60%;
+      height: 3px;
+      border-radius: 1.5px;
+      background-color: #000;
+      transition: 4s;
+
+
+  }
+
+  .hamburger>div:before,
+  .hamburger>div:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      border-radius: 1.5px;
+      background-color: #000;
+      transition: 4s;
+  }
+
+  .hamburger>div:before {
+      top: -10px;
+
+
+  }
+
+  .hamburger>div:after {
+      top: 10px;
+  }
+
+  .toggler:checked+.hamburger>div {
+      transform: rotate(135deg);
+  }
+
+  .toggler:checked:hover+.hamburger>div {
+      transform: rotate(225deg);
+  }
+
+  .toggler:checked+.hamburger>div:after,
+  .toggler:checked+.hamburger>div:before {
+      transform: rotate(90deg);
+      top: 0;
+  }
+
+  .toggler:checked~.menu {
+      visibility: visible;
+  }
+
+  .toggler:checked~.menu>div {
+      transform: translateX(-50%) translateY(-50%);
+  }
+
+  .toggler:checked~.menu>div>div {
+      opacity: 1;
+  }
+
+  .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      visibility: hidden;
+      transition: .6s;
+  }
+
+  .menu>div {
+      position: absolute;
+      width: 1600px;
+      height: 1600px;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-150%) translateY(-50%);
+      background-color: #fcfbfb;
+      transition: .6s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .menu>div>div {
+      max-width: 90vw;
+      max-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      opacity: 0;
+  }
+
+
+  .row {
+      text-decoration: none;
+      list-style: none;
+      text-align: center;
+      justify-content: center;
+      font-size: 250%;
+      /* font-family:  sans-serif; */
+      font-weight: lighter;
+
+
+
+
+  }
+
+  .row>li>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+  }
+
+  .li {
+      margin: 1.2rem;
+      color: black;
+  }
+
+  #para {
+      text-align: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 600;
+  }
+
+  #icon {
+      justify-content: center;
+      text-align: end;
+
+  }
+
+  #icon>li>a {
+      margin: 0.3rem;
+
+  }
+
+
+  #paragraph {
+      text-align: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 600;
+      position: relative;
+  }
+
+  #logo {
+      width: 8rem;
+      height: 4rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+  }
+
+  .second_page {
+      background-color: rgb(29, 28, 28);
+      color: white;
+      padding: 2% 6%;
+
+
+  }
+
+  /* 
+.second_page:hover , #b1:hover
+{
+    background-color:white;
+    color: black;
+    border: 2px solid black;
+
+
+} */
+
+
+  #small {
+      font-size: medium;
+  }
+
+  #large {
+      font-size: 2.5rem;
+  }
+
+  #b1 {
+      border: 1px solid white;
+      border-radius: 20px;
+      color: white;
+  }
+
+  #b1:hover {
+      border: none;
+  }
+
+
+
+  /* .third_page
+{
+} */
+
+  #h2 {
+      font-size: 3rem;
+      justify-content: start;
+
+  }
+
+  #p2 {
+      font-size: 2.2rem;
+  }
+
+  #b2 {
+      border: 1px solid black;
+      border-radius: 20px;
+
+
+  }
+
+  #b2:hover {
+      border: none;
+  }
+
+
+  #img2 {
+      width: 100%;
+      height: 90%;
+  }
+
+  .third {
+      padding: 3% 2%;
+  }
+
+  #h3 {
+      font-size: 3rem;
+      justify-content: start;
+
+  }
+
+  #p3 {
+      font-size: 2.2rem;
+  }
+
+  #b3 {
+      border: 1px solid black;
+      border-radius: 20px;
+
+
+  }
+
+  #b3:hover {
+      border: none;
+  }
+
+
+  #img3 {
+      width: 100%;
+      height: 90%;
+  }
+
+  .fourth {
+      padding: 2% 2%;
+  }
+
+  /*Fifth*/
+
+  #h5 {
+      font-size: 3rem;
+      justify-content: start;
+
+  }
+
+  #p5 {
+      font-size: 2.2rem;
+  }
+
+  #b5 {
+      border: 1px solid black;
+      border-radius: 20px;
+
+
+  }
+
+  #b5:hover {
+      border: none;
+  }
+
+
+  #img5 {
+      width: 100%;
+      height: 90%;
+  }
+
+  .fifth {
+      padding: 2% 2%;
+  }
+
+
+  /*sixth*/
+
+  #h6 {
+      font-size: 3rem;
+      justify-content: start;
+
+  }
+
+  #p6 {
+      font-size: 2.2rem;
+  }
+
+  #b6 {
+      border: 1px solid black;
+      border-radius: 20px;
+
+
+  }
+
+  #b6:hover {
+      border: none;
+  }
+
+
+  #img6 {
+      width: 100%;
+      height: 90%;
+  }
+
+  .sixth {
+      padding: 2% 2%;
+  }
+
+  /*footer*/
+
+  #f_logo {
+      width: 8rem;
+      height: 4rem;
+
+  }
+
+  #f_icon {
+
+      text-decoration: none;
+      list-style: none;
+      width: 20%;
+      /* justify-content: center;
+    text-align: end; */
+
+
+
+
+  }
+
+
+
+  #f_icon>li>a {
+      color: black;
+      text-decoration: none;
+
+  }
+
+  #f_1>li>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+  }
+
+
+  /* #d1-b{
+    background-color: ;
+} */
+
+
+  #fa_fa>li>a {
+      text-decoration: none;
+      list-style: none;
+  }
+
+  /*gallery CSS*/
+
+  #gallery_logo {
+      width: 8rem;
+      height: 4rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+  }
+
+  #gallery_heading {
+      margin-top: 8%;
+      margin-left: 5%;
+      font-size: 390%;
+      font-weight: bolder;
+  }
+
+  #gallery_btn1 {
+      background-color: rgb(255, 92, 33);
+      color: white;
+      font-size: larger;
+      font-weight: 500;
+      margin-left: 6%;
+  }
+
+  #gallery_btn2 {
+      font-size: larger;
+      font-weight: 500;
+
+  }
+
+  #gallery_btn2:hover {
+      background-color: rgb(255, 92, 33);
+      color: white;
+
+  }
+
+
+  #gallery_btn3 {
+      font-size: larger;
+      font-weight: 500;
+
+  }
+
+  #gallery_btn3:hover {
+      background-color: rgb(255, 92, 33);
+      color: white;
+
+  }
+
+
+  #gallery_btn4 {
+      font-size: larger;
+      font-weight: 500;
+
+  }
+
+  #gallery_btn4:hover {
+      background-color: rgb(255, 92, 33);
+      color: white;
+
+  }
+
+  .gall_img {
+      width: 80%;
+      height: 80%;
+  }
+
+
+  /* scrolling bg change */
+  body {
+      transition: background color is ease;
+  }
+
+
+
+  /*News CSS*/
+
+
+  #news_logo {
+      width: 8rem;
+      height: 4rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+  }
+
+  #news_heading   {
+      margin-top: 8%;
+      margin-left: 5%;
+      font-size: 410%;
+      font-weight: bolder;
+  }
+
+  #news_h1 {
+      margin-left: 5%;
+
+      font-weight: bolder;
+  }
+
+  #news_content {
+      font-size: xx-large;
+      padding: 5% 5%;
+  }
+
+  #news_btn1 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+
+
+  }
+
+  #news_btn1:hover {
+      border: none;
+
+
+
+  }
+
+  #news_btn1>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+  #news_btn2 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+
+
+  }
+
+  #news_btn2:hover {
+      border: none;
+
+
+
+  }
+
+  #news_btn2>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+  #news_btn3 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+
+
+  }
+
+  #news_btn3:hover {
+      border: none;
+
+
+
+  }
+
+  #news_btn3>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+  /*row2*/
+
+  #news_btn4 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+
+
+  }
+
+  #news_btn4:hover {
+      border: none;
+
+
+
+  }
+
+  #news_btn4>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+
+
+
+  #news_btn5 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+
+
+  }
+
+  #news_btn5:hover {
+      border: none;
+
+
+
+  }
+
+  #news_btn5>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+
+
+
+  #news_btn6 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+
+
+  }
+
+  #news_btn6:hover {
+      border: none;
+
+
+
+  }
+
+  #news_btn6>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+
+
+
+
+  #news_btn7 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+
+
+  }
+
+  #news_btn7:hover {
+      border: none;
+
+
+
+  }
+
+  #news_btn7>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+
+
+
+  #news_btn8 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+
+
+  }
+
+  #news_btn8:hover {
+      border: none;
+
+
+
+  }
+
+  #news_btn8>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+  /*blogs_CSS*/
+
+  .blog_h6 {
+      font-weight: 650;
+      font-size: 110%;
+
+  }
+
+
+  #blogs_btn1 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+  }
+
+  #blogs_btn1:hover {
+      border: none;
+  }
+
+  #blogs_btn1>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+
+
+  #blogs_btn2 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+  }
+
+  #blogs_btn2:hover {
+      border: none;
+  }
+
+  #blogs_btn2>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+  #blogs_btn3 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+  }
+
+  #blogs_btn3:hover {
+      border: none;
+  }
+
+  #blogs_btn3>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+  /*row2*/
+  #blogs_btn4 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+  }
+
+  #blogs_btn4:hover {
+      border: none;
+  }
+
+  #blogs_btn4>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+
+  #blogs_btn5 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+  }
+
+  #blogs_btn5:hover {
+      border: none;
+  }
+
+  #blogs_btn5>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+
+  #blogs_btn6 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+  }
+
+  #blogs_btn6:hover {
+      border: none;
+  }
+
+  #blogs_btn6>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+  /*row3*/
+
+  #blogs_btn7 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+  }
+
+  #blogs_btn7:hover {
+      border: none;
+  }
+
+  #blogs_btn7>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+
+  #blogs_btn8 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+  }
+
+  #blogs_btn8:hover {
+      border: none;
+  }
+
+  #blogs_btn8>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+
+  #blogs_btn9 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+  }
+
+  #blogs_btn9:hover {
+      border: none;
+  }
+
+  #blogs_btn9>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+  /*row4*/
+
+
+  #blogs_btn10 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+  }
+
+  #blogs_btn10:hover {
+      border: none;
+  }
+
+  #blogs_btn10>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+
+  #blogs_btn11 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+  }
+
+  #blogs_btn11:hover {
+      border: none;
+  }
+
+  #blogs_btn11>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+
+  #blogs_btn12 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+  }
+
+  #blogs_btn12:hover {
+      border: none;
+  }
+
+  #blogs_btn12>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+  /*row5*/
+  #blogs_btn13 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+  }
+
+  #blogs_btn13:hover {
+      border: none;
+  }
+
+  #blogs_btn13>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+  #blogs_btn14 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+  }
+
+  #blogs_btn14:hover {
+      border: none;
+  }
+
+  #blogs_btn14>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+  #blogs_btn15 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+  }
+
+  #blogs_btn15:hover {
+      border: none;
+  }
+
+  #blogs_btn15>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+
+
+  }
+
+  /*product & Services CSS*/
+
+  #pro_h1 {
+      font-size: 4.5rem;
+      font-weight: bold;
+      margin-top: 5%;
+      margin-left: 10%;
+  }
+
+  #pro_h2 {
+      font-size: 4.5rem;
+      font-weight: bolder;
+      margin-left: 10%;
+      color: white;
+      /* background-color: #fff;*/
+      background-clip: text;
+      -webkit-text-stroke-color: black;
+      -webkit-text-stroke-width: calc(1rem /16);
+      -webkit-background-clip: text;
+  }
+
+  #pro_span {
+      font-size: 35%;
+      font-weight: lighter;
+  }
+
+  #pro_Para1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: normal;
+      margin-top: 9%;
+  }
+
+  #pro_btn1 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+  }
+
+  #pro_btn1:hover {
+      border: none;
+  }
+
+  #pro_btn1>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+  }
+
+  #pro_btn2 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+  }
+
+  #pro_btn2:hover {
+      border: none;
+  }
+
+  #pro_btn2>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+  }
+
+
+  #pro_btn3 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+  }
+
+  #pro_btn3:hover {
+      border: none;
+  }
+
+  #pro_btn3>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+  }
+
+
+
+  #pro_btn4 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+  }
+
+  #pro_btn4:hover {
+      border: none;
+  }
+
+  #pro_btn4>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+  }
+
+
+  #pro_btn5 {
+      border: 1px solid black;
+      /* width: 50%; */
+      border-radius: 40px;
+  }
+
+  #pro_btn5:hover {
+      border: none;
+  }
+
+  #pro_btn5>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 80%;
+      font-weight: 600;
+  }
+
+  .footer_link>li>p>a {
+      text-decoration: none;
+      list-style: none;
+      color: black;
+  }
+
+
+  /*Customer Page*/
+  #cus_h1 {
+      font-size: 4.5rem;
+      font-weight: bold;
+      margin-top: 5%;
+      margin-left: 10%;
+  }
+
+  #cus_h2 {
+      font-size: 4.5rem;
+      font-weight: bolder;
+      margin-left: 10%;
+      color: white;
+      /* background-color: #fff;*/
+      background-clip: text;
+      -webkit-text-stroke-color: black;
+      -webkit-text-stroke-width: calc(1rem /16);
+      -webkit-background-clip: text;
+  }
+
+  #cus_span {
+      font-size: 35%;
+      font-weight: lighter;
+  }
+  #cus_li
+  {
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    font-size: x-large;
+    font-weight: 500;
+    justify-content: space-between;
+  }
+  #cus_li2
+  {
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    font-size: x-large;
+    font-weight: 500;
+    justify-content: space-between;
+  }
+
+
+  /*About Page*/
+  #about_US {
+    font-size: 4.5rem;
+    font-weight: bolder;
+    color: white;
+    /* background-color: #fff;*/
+    background-clip: text;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: calc(1rem /16);
+    -webkit-background-clip: text;
+}
+
+
+.outer{
+position: relative;
+}
+
+
+.inner
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.inner:hover{
+    opacity: 1;
+
+    }
+
+
+    /* div.scrollmenu {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+      }
+      
+      div.scrollmenu {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+      }
+      
+      div.scrollmenu :hover {
+        background-color: #777;
+      } */
+
+
+
+      /*Contact CSS*/
+
+#contact_h1
+{
+    font-weight: bolder;
+    font-size: 4.2rem;
+    
+
+}
+
+      #contact_h2
+      {
+        font-size: 4.5rem;
+        font-weight: bolder;
+        color: white;
+        /* background-color: #fff;*/
+        background-clip: text;
+        -webkit-text-stroke-color: black;
+        -webkit-text-stroke-width: calc(1rem /16);
+        -webkit-background-clip: text;
+        }
+      
+
+        #dropmenu, #name ,#email , #phone
+        {
+            text-decoration: none;
+            list-style: none;
+            border: none;
+            border-bottom: 1px solid rgb(35, 35, 35);
+            outline: none;
+            margin: 3%;
+            font-family:  'Montserrat', sans-serif;
+            font-weight: 600;
+
+        }
+        #message
+        {
+            text-decoration: none;
+            list-style: none;
+            border: none;
+            border-bottom: 1px solid rgb(35, 35, 35);
+            outline: none;
+            margin: 3%;
+            font-family:  'Montserrat', sans-serif;
+            font-weight: 600;
+
+        }
+#con_btn
+{
+background-color: black;
+color: white;
+border-radius: 1.3rem;
+min-width:7rem ;
+margin: 3%;
+}
+#con_btn:hover{
+    background-color:white;
+    color: black;
+    border: 1px solid black;
+    
+}
+#net , #net2 , #net3
+{
+    text-decoration: none; 
+    list-style: none; 
+    color: black; 
+    font-size: larger;
+    font-family:  'Montserrat', sans-serif;
+font-weight: 600;
+}
+.X
+{
+    font-size: x-large;
+}
+
+/*Collaborate*/
+#coll_h1 {
+    font-size: 4.5rem;
+    font-weight: bold;
+    margin-top: 5%;
+    margin-left: 9%;
+}
+
+#coll_h2 {
+    font-size: 4.5rem;
+    font-weight: bolder;
+    margin-left: 9%;
+    color: white; 
+      background-color: white;
+    background-clip: text;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: calc(1rem / 16);
+    -webkit-background-clip: text;
+}
+#coll_heading {
+    margin-top: 8%;
+    
+}  
+
+#career_heading   {
+    margin-top: 8%;
+    margin-left: 6%;
+    font-size: 410%;
+    font-weight: bolder;
+}
+#career_h2
+{
+    margin-top: 8%;
+    margin-left: 6%;
+    font-size: 300%;
+    font-weight: bolder;
+}
+#career_h3
+{
+    
+    margin-left: 6%;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+.career_content
+{
+    /* font-family:  'Montserrat', sans-serif; */
+    font-weight: 700;
+}
+.inner_text
+{
+    font-size: large;
+    font-family:  'Montserrat', sans-serif;
+font-weight: 600;
+font-style: start;
+
+}
+#apply_btn1
+{
+    border-radius: 2rem;
+    border: 1px solid black;
+    background-color: transparent;
+    position: absolute;
+    top: 1.2rem;
+    right:1rem;
+    font-size: smaller;
+}
+#apply_btn1:hover
+{
+    border: none;
+}
+.stagger_text{
+    display: block;
+}
+.stagger-text {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s, transform 0.8s;
+  }
+
+
+  /*Form*/
+  .form_heading
+  {
+    font-family:   'Montserrat', sans-serif;
+    font-size: larger;
+    font-weight: 600;
+  }
+
+  #form01
+  {
+    background-color: whitesmoke;
+    padding: 5%;
+  }
+
+  #dropmenu, #name ,#email , #phone
+  {
+      text-decoration: none;
+      list-style: none;
+      border: none;
+      border-bottom: 1px solid rgb(35, 35, 35);
+      outline: none;
+      margin: 3%;
+      font-family:  'Montserrat', sans-serif;
+      font-weight: 600;
+      background-color: transparent;
+
+  }
+
+label
+{
+    position: relative;
+    top: 1px;
+    height: 2rem;
+    width: 2rem;
+    border: 2px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+}
+
+label::after
+{
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    width: 7px;
+    height: 14px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transition-delay:0.15s ;
+    transform: rotate(45deg) scale(0);
+
+}
+
+#cbx:checked ~ label
+{
+background-color: black;
+animation: checky 0.5s ease;
+}
+
+#cbx:checked ~ label::after
+{
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+
+}
+
+#cbx
+{
+    display: none;
+}
+  @keyframes checky
+  {
+    from{
+        transform : scale(1,1);
+    }
+
+    20%{
+        transform : scale(1.3,0.75);
+    }
+
+
+    40%{
+        transform : scale(1.1,0.45);
+    }
+
+
+    60%{
+        transform : scale(0.7,0.75);
+    }
+
+    80%{
+        transform : scale(0.5,0.75);
+    }
+
+
+    to{
+        transform : scale(1,1);
+    }
+  }
+
+
+
+  /* //2// */
+
+  #cb2
+{
+    position: relative;
+    top: 1px;
+    height: 2rem;
+    width: 2rem;
+    border: 2px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+}
+
+#cb2::after
+{
+    content: "";
+    position: absolute;
+     top: 3px;
+    left: 10px;
+    
+    width: 7px;
+    height: 14px; 
+     border-left: 2px solid white; 
+    border: 2px solid white; 
+    opacity: 0;
+    transition: all 0.3s ease;
+    transition-delay:0.15s ;
+    transform: rotate(60deg) scale(0);
+
+}
+
+  #cbx2:checked ~ label
+{
+background-color: black;
+animation: checky 0.5s ease;
+}
+
+#cbx2:checked ~ label::after
+{
+    opacity: 1;
+    /* transform: rotate(45deg) scale(1); */
+
+}
+
+#cbx2
+{
+    display: none;
+}
+  @keyframes checky
+  {
+    from{
+        transform : scale(1,1);
+    }
+
+    20%{
+        transform : scale(1.3,0.75);
+    }
+
+
+    40%{
+        transform : scale(1.1,0.45);
+    }
+
+
+    60%{
+        transform : scale(0.7,0.75);
+    }
+
+    80%{
+        transform : scale(0.5,0.75);
+    }
+
+
+    to{
+        transform : scale(1,1);
+    }
+  }
+
+/*card02*/
+label
+{
+    position: relative;
+    top: 1px;
+    height: 2rem;
+    width: 2rem;
+    border: 2px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+}
+
+label::after
+{
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    width: 7px;
+    height: 14px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transition-delay:0.15s ;
+    transform: rotate(45deg) scale(0);
+
+}
+
+#onclick:checked ~ label
+{
+background-color: black;
+animation: checky 0.5s ease;
+}
+
+#onclick:checked ~ label::after
+{
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+
+}
+
+#onclick
+{
+    display: none;
+}
+  @keyframes checky
+  {
+    from{
+        transform : scale(1,1);
+    }
+
+    20%{
+        transform : scale(1.3,0.75);
+    }
+
+
+    40%{
+        transform : scale(1.1,0.45);
+    }
+
+
+    60%{
+        transform : scale(0.7,0.75);
+    }
+
+    80%{
+        transform : scale(0.5,0.75);
+    }
+
+
+    to{
+        transform : scale(1,1);
+    }
+  }
+
+
+
+  /* //2// */
+
+  #onclick2
+{
+    position: relative;
+    top: 1px;
+    height: 2rem;
+    width: 2rem;
+    border: 2px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+}
+
+#onclick2::after
+{
+    content: "";
+    position: absolute;
+     top: 3px;
+    left: 10px;
+    
+    width: 7px;
+    height: 14px; 
+     border-left: 2px solid white; 
+    border: 2px solid white; 
+    opacity: 0;
+    transition: all 0.3s ease;
+    transition-delay:0.15s ;
+    transform: rotate(60deg) scale(0);
+
+}
+
+  #onclick2:checked ~ label
+{
+background-color: black;
+animation: checky 0.5s ease;
+}
+
+#onclick2:checked ~ label::after
+{
+    opacity: 1;
+    /* transform: rotate(45deg) scale(1); */
+
+}
+
+#onclick2
+{
+    display: none;
+}
+  @keyframes checky
+  {
+    from{
+        transform : scale(1,1);
+    }
+
+    20%{
+        transform : scale(1.3,0.75);
+    }
+
+
+    40%{
+        transform : scale(1.1,0.45);
+    }
+
+
+    60%{
+        transform : scale(0.7,0.75);
+    }
+
+    80%{
+        transform : scale(0.5,0.75);
+    }
+
+
+    to{
+        transform : scale(1,1);
+    }
+  }
+
+
+  /*card03*/
+  label
+{
+    position: relative;
+    top: 1px;
+    height: 2rem;
+    width: 2rem;
+    border: 2px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+}
+
+label::after
+{
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    width: 7px;
+    height: 14px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transition-delay:0.15s ;
+    transform: rotate(45deg) scale(0);
+
+}
+
+#btn_click:checked ~ label
+{
+background-color: black;
+animation: checky 0.5s ease;
+}
+
+#btn_click:checked ~ label::after
+{
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+
+}
+
+#btn_click
+{
+    display: none;
+}
+  @keyframes checky
+  {
+    from{
+        transform : scale(1,1);
+    }
+
+    20%{
+        transform : scale(1.3,0.75);
+    }
+
+
+    40%{
+        transform : scale(1.1,0.45);
+    }
+
+
+    60%{
+        transform : scale(0.7,0.75);
+    }
+
+    80%{
+        transform : scale(0.5,0.75);
+    }
+
+
+    to{
+        transform : scale(1,1);
+    }
+  }
+
+
+
+  /* //2// */
+
+  #btn_click2
+{
+    position: relative;
+    top: 1px;
+    height: 2rem;
+    width: 2rem;
+    border: 2px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+}
+
+#btn_click2::after
+{
+    content: "";
+    position: absolute;
+     top: 3px;
+    left: 10px;
+    
+    width: 7px;
+    height: 14px; 
+     border-left: 2px solid white; 
+    border: 2px solid white; 
+    opacity: 0;
+    transition: all 0.3s ease;
+    transition-delay:0.15s ;
+    transform: rotate(60deg) scale(0);
+
+}
+
+  #btn_click2:checked ~ label
+{
+background-color: black;
+animation: checky 0.5s ease;
+}
+
+#btn_click2:checked ~ label::after
+{
+    opacity: 1;
+    /* transform: rotate(45deg) scale(1); */
+
+}
+
+#btn_click2
+{
+    display: none;
+}
+  @keyframes checky
+  {
+    from{
+        transform : scale(1,1);
+    }
+
+    20%{
+        transform : scale(1.3,0.75);
+    }
+
+
+    40%{
+        transform : scale(1.1,0.45);
+    }
+
+
+    60%{
+        transform : scale(0.7,0.75);
+    }
+
+    80%{
+        transform : scale(0.5,0.75);
+    }
+
+
+    to{
+        transform : scale(1,1);
+    }
+  }
+
+
+  /*formlast*/
+  label
+{
+    position: relative;
+    top: 1px;
+    height: 2rem;
+    width: 2rem;
+    border: 2px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+}
+
+label::after
+{
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    width: 7px;
+    height: 14px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transition-delay:0.15s ;
+    transform: rotate(45deg) scale(0);
+
+}
+
+#tick_button:checked ~ label
+{
+background-color: black;
+animation: checky 0.5s ease;
+}
+
+#tick_button:checked ~ label::after
+{
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+
+}
+
+#tick_button
+{
+    display: none;
+}
+  @keyframes checky
+  {
+    from{
+        transform : scale(1,1);
+    }
+
+    20%{
+        transform : scale(1.3,0.75);
+    }
+
+
+    40%{
+        transform : scale(1.1,0.45);
+    }
+
+
+    60%{
+        transform : scale(0.7,0.75);
+    }
+
+    80%{
+        transform : scale(0.5,0.75);
+    }
+
+
+    to{
+        transform : scale(1,1);
+    }
+  }
+
+
+  /*btn2_form*/
+  label
+  {
+      position: relative;
+      top: 1px;
+      height: 2rem;
+      width: 2rem;
+      border: 2px solid black;
+      cursor: pointer;
+      border-radius: 5px;
+      display: block;
+  }
+  
+  label::after
+  {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 10px;
+      width: 7px;
+      height: 14px;
+      border-right: 2px solid white;
+      border-bottom: 2px solid white;
+      opacity: 0;
+      transition: all 0.3s ease;
+      transition-delay:0.15s ;
+      transform: rotate(45deg) scale(0);
+  
+  }
+  
+  #tick_button2:checked ~ label
+  {
+  background-color: black;
+  animation: checky 0.5s ease;
+  }
+  
+  #tick_button2:checked ~ label::after
+  {
+      opacity: 1;
+      transform: rotate(45deg) scale(1);
+  
+  }
+  
+  #tick_button2
+  {
+      display: none;
+  }
+    @keyframes checky
+    {
+      from{
+          transform : scale(1,1);
+      }
+  
+      20%{
+          transform : scale(1.3,0.75);
+      }
+  
+  
+      40%{
+          transform : scale(1.1,0.45);
+      }
+  
+  
+      60%{
+          transform : scale(0.7,0.75);
+      }
+  
+      80%{
+          transform : scale(0.5,0.75);
+      }
+  
+  
+      to{
+          transform : scale(1,1);
+      }
+    }
+
+
+    /*btn3_form*/
+     label
+{
+    position: relative;
+    top: 1px;
+    height: 2rem;
+    width: 2rem;
+    border: 2px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+}
+
+label::after
+{
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    width: 7px;
+    height: 14px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transition-delay:0.15s ;
+    transform: rotate(45deg) scale(0);
+
+}
+
+#tick_button3:checked ~ label
+{
+background-color: black;
+animation: checky 0.5s ease;
+}
+
+#tick_button3:checked ~ label::after
+{
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+
+}
+
+#tick_button3
+{
+    display: none;
+}
+  @keyframes checky
+  {
+    from{
+        transform : scale(1,1);
+    }
+
+    20%{
+        transform : scale(1.3,0.75);
+    }
+
+
+    40%{
+        transform : scale(1.1,0.45);
+    }
+
+
+    60%{
+        transform : scale(0.7,0.75);
+    }
+
+    80%{
+        transform : scale(0.5,0.75);
+    }
+
+
+    to{
+        transform : scale(1,1);
+    }
+  }
+
+
+  /*card04*/
+  label
+  {
+      position: relative;
+      top: 1px;
+      height: 2rem;
+      width: 2rem;
+      border: 2px solid black;
+      cursor: pointer;
+      border-radius: 5px;
+      display: block;
+  }
+  
+  label::after
+  {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 10px;
+      width: 7px;
+      height: 14px;
+      border-right: 2px solid white;
+      border-bottom: 2px solid white;
+      opacity: 0;
+      transition: all 0.3s ease;
+      transition-delay:0.15s ;
+      transform: rotate(45deg) scale(0);
+  
+  }
+  
+  #tick_button4:checked ~ label
+  {
+  background-color: black;
+  animation: checky 0.5s ease;
+  }
+  
+  #tick_button4:checked ~ label::after
+  {
+      opacity: 1;
+      transform: rotate(45deg) scale(1);
+  
+  }
+  
+  #tick_button4
+  {
+      display: none;
+  }
+    @keyframes checky
+    {
+      from{
+          transform : scale(1,1);
+      }
+  
+      20%{
+          transform : scale(1.3,0.75);
+      }
+  
+  
+      40%{
+          transform : scale(1.1,0.45);
+      }
+  
+  
+      60%{
+          transform : scale(0.7,0.75);
+      }
+  
+      80%{
+          transform : scale(0.5,0.75);
+      }
+  
+  
+      to{
+          transform : scale(1,1);
+      }
+    }
+
+
+    /*btn5_form*/
+    label
+    {
+        position: relative;
+        top: 1px;
+        height: 2rem;
+        width: 2rem;
+        border: 2px solid black;
+        cursor: pointer;
+        border-radius: 5px;
+        display: block;
+    }
+    
+    label::after
+    {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 10px;
+        width: 7px;
+        height: 14px;
+        border-right: 2px solid white;
+        border-bottom: 2px solid white;
+        opacity: 0;
+        transition: all 0.3s ease;
+        transition-delay:0.15s ;
+        transform: rotate(45deg) scale(0);
+    
+    }
+    
+    #tick_button5:checked ~ label
+    {
+    background-color: black;
+    animation: checky 0.5s ease;
+    }
+    
+    #tick_button5:checked ~ label::after
+    {
+        opacity: 1;
+        transform: rotate(45deg) scale(1);
+    
+    }
+    
+    #tick_button5
+    {
+        display: none;
+    }
+      @keyframes checky
+      {
+        from{
+            transform : scale(1,1);
+        }
+    
+        20%{
+            transform : scale(1.3,0.75);
+        }
+    
+    
+        40%{
+            transform : scale(1.1,0.45);
+        }
+    
+    
+        60%{
+            transform : scale(0.7,0.75);
+        }
+    
+        80%{
+            transform : scale(0.5,0.75);
+        }
+    
+    
+        to{
+            transform : scale(1,1);
+        }
+      }
+
+
+      /*btn6_form*/
+      label
+      {
+          position: relative;
+          top: 1px;
+          height: 2rem;
+          width: 2rem;
+          border: 2px solid black;
+          cursor: pointer;
+          border-radius: 5px;
+          display: block;
+      }
+      
+      label::after
+      {
+          content: "";
+          position: absolute;
+          top: 3px;
+          left: 10px;
+          width: 7px;
+          height: 14px;
+          border-right: 2px solid white;
+          border-bottom: 2px solid white;
+          opacity: 0;
+          transition: all 0.3s ease;
+          transition-delay:0.15s ;
+          transform: rotate(45deg) scale(0);
+      
+      }
+      
+      #tick_button6:checked ~ label
+      {
+      background-color: black;
+      animation: checky 0.5s ease;
+      }
+      
+      #tick_button6:checked ~ label::after
+      {
+          opacity: 1;
+          transform: rotate(45deg) scale(1);
+      
+      }
+      
+      #tick_button6
+      {
+          display: none;
+      }
+        @keyframes checky
+        {
+          from{
+              transform : scale(1,1);
+          }
+      
+          20%{
+              transform : scale(1.3,0.75);
+          }
+      
+      
+          40%{
+              transform : scale(1.1,0.45);
+          }
+      
+      
+          60%{
+              transform : scale(0.7,0.75);
+          }
+      
+          80%{
+              transform : scale(0.5,0.75);
+          }
+      
+      
+          to{
+              transform : scale(1,1);
+          }
+        }
+
+  
+
+        /*btn7_form*/
+        label
+        {
+            position: relative;
+            top: 1px;
+            height: 2rem;
+            width: 2rem;
+            border: 2px solid black;
+            cursor: pointer;
+            border-radius: 5px;
+            display: block;
+        }
+        
+        label::after
+        {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 10px;
+            width: 7px;
+            height: 14px;
+            border-right: 2px solid white;
+            border-bottom: 2px solid white;
+            opacity: 0;
+            transition: all 0.3s ease;
+            transition-delay:0.15s ;
+            transform: rotate(45deg) scale(0);
+        
+        }
+        
+        #tick_button7:checked ~ label
+        {
+        background-color: black;
+        animation: checky 0.5s ease;
+        }
+        
+        #tick_button7:checked ~ label::after
+        {
+            opacity: 1;
+            transform: rotate(45deg) scale(1);
+        
+        }
+        
+        #tick_button7
+        {
+            display: none;
+        }
+          @keyframes checky
+          {
+            from{
+                transform : scale(1,1);
+            }
+        
+            20%{
+                transform : scale(1.3,0.75);
+            }
+        
+        
+            40%{
+                transform : scale(1.1,0.45);
+            }
+        
+        
+            60%{
+                transform : scale(0.7,0.75);
+            }
+        
+            80%{
+                transform : scale(0.5,0.75);
+            }
+        
+        
+            to{
+                transform : scale(1,1);
+            }
+          }
+
+          /*btn8_form*/
+          label
+          {
+              position: relative;
+              top: 1px;
+              height: 2rem;
+              width: 2rem;
+              border: 2px solid black;
+              cursor: pointer;
+              border-radius: 5px;
+              display: block;
+          }
+          
+          label::after
+          {
+              content: "";
+              position: absolute;
+              top: 3px;
+              left: 10px;
+              width: 7px;
+              height: 14px;
+              border-right: 2px solid white;
+              border-bottom: 2px solid white;
+              opacity: 0;
+              transition: all 0.3s ease;
+              transition-delay:0.15s ;
+              transform: rotate(45deg) scale(0);
+          
+          }
+          
+          #tick_button8:checked ~ label
+          {
+          background-color: black;
+          animation: checky 0.5s ease;
+          }
+          
+          #tick_button8:checked ~ label::after
+          {
+              opacity: 1;
+              transform: rotate(45deg) scale(1);
+          
+          }
+          
+          #tick_button8
+          {
+              display: none;
+          }
+            @keyframes checky
+            {
+              from{
+                  transform : scale(1,1);
+              }
+          
+              20%{
+                  transform : scale(1.3,0.75);
+              }
+          
+          
+              40%{
+                  transform : scale(1.1,0.45);
+              }
+          
+          
+              60%{
+                  transform : scale(0.7,0.75);
+              }
+          
+              80%{
+                  transform : scale(0.5,0.75);
+              }
+          
+          
+              to{
+                  transform : scale(1,1);
+              }
+            }
+    
+
+            /*btn9_form*/
+            label
+            {
+                position: relative;
+                top: 1px;
+                height: 2rem;
+                width: 2rem;
+                border: 2px solid black;
+                cursor: pointer;
+                border-radius: 5px;
+                display: block;
+            }
+            
+            label::after
+            {
+                content: "";
+                position: absolute;
+                top: 3px;
+                left: 10px;
+                width: 7px;
+                height: 14px;
+                border-right: 2px solid white;
+                border-bottom: 2px solid white;
+                opacity: 0;
+                transition: all 0.3s ease;
+                transition-delay:0.15s ;
+                transform: rotate(45deg) scale(0);
+            
+            }
+            
+            #tick_button9:checked ~ label
+            {
+            background-color: black;
+            animation: checky 0.5s ease;
+            }
+            
+            #tick_button9:checked ~ label::after
+            {
+                opacity: 1;
+                transform: rotate(45deg) scale(1);
+            
+            }
+            
+            #tick_button9
+            {
+                display: none;
+            }
+              @keyframes checky
+              {
+                from{
+                    transform : scale(1,1);
+                }
+            
+                20%{
+                    transform : scale(1.3,0.75);
+                }
+            
+            
+                40%{
+                    transform : scale(1.1,0.45);
+                }
+            
+            
+                60%{
+                    transform : scale(0.7,0.75);
+                }
+            
+                80%{
+                    transform : scale(0.5,0.75);
+                }
+            
+            
+                to{
+                    transform : scale(1,1);
+                }
+              }
+    
+              /*btn10_form*/
+              label
+              {
+                  position: relative;
+                  top: 1px;
+                  height: 2rem;
+                  width: 2rem;
+                  border: 2px solid black;
+                  cursor: pointer;
+                  border-radius: 5px;
+                  display: block;
+              }
+              
+              label::after
+              {
+                  content: "";
+                  position: absolute;
+                  top: 3px;
+                  left: 10px;
+                  width: 7px;
+                  height: 14px;
+                  border-right: 2px solid white;
+                  border-bottom: 2px solid white;
+                  opacity: 0;
+                  transition: all 0.3s ease;
+                  transition-delay:0.15s ;
+                  transform: rotate(45deg) scale(0);
+              
+              }
+              
+              #tick_button10:checked ~ label
+              {
+              background-color: black;
+              animation: checky 0.5s ease;
+              }
+              
+              #tick_button10:checked ~ label::after
+              {
+                  opacity: 1;
+                  transform: rotate(45deg) scale(1);
+              
+              }
+              
+              #tick_button10
+              {
+                  display: none;
+              }
+                @keyframes checky
+                {
+                  from{
+                      transform : scale(1,1);
+                  }
+              
+                  20%{
+                      transform : scale(1.3,0.75);
+                  }
+              
+              
+                  40%{
+                      transform : scale(1.1,0.45);
+                  }
+              
+              
+                  60%{
+                      transform : scale(0.7,0.75);
+                  }
+              
+                  80%{
+                      transform : scale(0.5,0.75);
+                  }
+              
+              
+                  to{
+                      transform : scale(1,1);
+                  }
+                }
+
+
+                /*tick_but1*/
+                label
+              {
+                  position: relative;
+                  top: 1px;
+                  height: 2rem;
+                  width: 2rem;
+                  border: 2px solid black;
+                  cursor: pointer;
+                  border-radius: 5px;
+                  display: block;
+              }
+              
+              label::after
+              {
+                  content: "";
+                  position: absolute;
+                  top: 3px;
+                  left: 10px;
+                  width: 7px;
+                  height: 14px;
+                  border-right: 2px solid white;
+                  border-bottom: 2px solid white;
+                  opacity: 0;
+                  transition: all 0.3s ease;
+                  transition-delay:0.15s ;
+                  transform: rotate(45deg) scale(0);
+              
+              }
+              
+              #tick_but1:checked ~ label
+              {
+              background-color: black;
+              animation: checky 0.5s ease;
+              }
+              
+              #tick_but1:checked ~ label::after
+              {
+                  opacity: 1;
+                  transform: rotate(45deg) scale(1);
+              
+              }
+              
+              #tick_but1
+              {
+                  display: none;
+              }
+                @keyframes checky
+                {
+                  from{
+                      transform : scale(1,1);
+                  }
+              
+                  20%{
+                      transform : scale(1.3,0.75);
+                  }
+              
+              
+                  40%{
+                      transform : scale(1.1,0.45);
+                  }
+              
+              
+                  60%{
+                      transform : scale(0.7,0.75);
+                  }
+              
+                  80%{
+                      transform : scale(0.5,0.75);
+                  }
+              
+              
+                  to{
+                      transform : scale(1,1);
+                  }
+                }
+                #submit_btn {
+                    border: 1px solid black;
+                    /* width: 50%; */
+                    border-radius: 40px;
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: 600;
+                    
+                }
+              
+                #submit_btn:hover {
+                    background-color: black;
+                    color: white;
+                }
+      
+  
+    
+
